@@ -4,38 +4,38 @@
 .DEFAULT_GOAL := help
 
 install: ## Install dependencies
-	npm install
+	pnpm install
 
 build: ## Build all dist outputs (ESM, CJS, UMD)
-	npm run build
+	pnpm run build
 
 clean: ## Remove dist directory
 	rm -rf dist
 
 test: ## Run tests
-	npm test
+	pnpm test
 
 test-watch: ## Run tests in watch mode
-	npm run test:watch
+	pnpm run test:watch
 
 lint: ## Lint source files
-	npm run lint
+	pnpm run lint
 
 watch: ## Build in watch mode
-	npm run build:watch
+	pnpm run build:watch
 
 publish: build ## Build and publish to GitHub Packages
 	@echo "Publishing $(shell node -p "require('./package.json').name")@$(shell node -p "require('./package.json').version")"
-	npm publish
+	pnpm publish
 
 version-patch: ## Bump patch version (0.0.x)
-	npm version patch
+	pnpm version patch
 
 version-minor: ## Bump minor version (0.x.0)
-	npm version minor
+	pnpm version minor
 
 version-major: ## Bump major version (x.0.0)
-	npm version major
+	pnpm version major
 
 help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
