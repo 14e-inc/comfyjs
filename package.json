@@ -1,6 +1,6 @@
 {
   "name": "@14e-inc/comfyjs",
-  "version": "0.1.0-alpha-0.0.3",
+  "version": "0.1.0-alpha-0.0.4",
   "description": "A comfortable JavaScript utility library",
   "author": "14e Inc.",
   "license": "MIT",
@@ -13,6 +13,7 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs.js"
     }
