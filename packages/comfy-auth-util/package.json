@@ -1,6 +1,6 @@
 {
   "name": "@14e-inc/comfy-auth-util",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "JWT utility helpers for comfy-auth — decode, claims, and token extraction",
   "author": "14e Inc.",
   "license": "MIT",
