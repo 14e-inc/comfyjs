@@ -10,14 +10,24 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "clean": "rm -rf dist",
-    "prebuild": "pnpm run clean"
+    "prebuild": "pnpm run clean",
+    "prepublishOnly": "pnpm run build",
+    "typecheck": "tsc --noEmit",
+    "pack:dry": "pnpm pack --dry-run",
+    "publish:dry": "pnpm publish --dry-run --access restricted",
+    "publish:release": "pnpm publish --access restricted",
+    "scaffold": "node scripts/scaffold.mjs",
+    "version:patch": "pnpm version patch",
+    "version:minor": "pnpm version minor",
+    "version:major": "pnpm version major"
   },
   "dependencies": {
     "yeoman-generator": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "yeoman-environment": "^6.0.0"
   },
   "keywords": ["yeoman-generator", "comfy-skills", "scaffold"],
   "publishConfig": {
