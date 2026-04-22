@@ -1,0 +1,58 @@
+{
+  "name": "<%= packageName %>",
+  "version": "0.1.0",
+  "description": "<%= description %>",
+  "author": "<%= authorName %> <<%= authorEmail %>>",
+  "license": "<%= license %>",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+<% if (includeCli) { %>
+  "bin": {
+    "<%= packageSlug %>": "./dist/cli.cjs.js"
+  },
+<% } %>
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm run clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "@14e-inc/comfy-skills": ">=0.1.0"
+  },
+  "devDependencies": {
+    "@14e-inc/comfy-skills": "workspace:*",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^12.0.0",
+    "@types/node": "^22.0.0",
+    "rollup": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "<%= registry %>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= githubOrg %>/<%= githubRepo %>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<%= githubOrg %>/<%= githubRepo %>/issues"
+  },
+  "homepage": "https://github.com/<%= githubOrg %>/<%= githubRepo %>#readme",
+  "keywords": ["skills", "comfy-skills", "registry"]
+}

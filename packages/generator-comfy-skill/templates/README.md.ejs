@@ -1,0 +1,71 @@
+# <%= packageName %>
+
+> <%= description %>
+
+A skills module built on [@14e-inc/comfy-skills](https://github.com/hebronwatson/comfyjs/tree/main/packages/comfy-skills).
+Importing this package auto-registers its skills into the shared `globalRegistry`.
+
+## Install
+
+```sh
+npm install <%= packageName %> @14e-inc/comfy-skills
+```
+
+## Usage
+
+```ts
+// Side-effect import registers all skills into globalRegistry
+import '<%= packageName %>';
+import { globalRegistry } from '@14e-inc/comfy-skills';
+
+const result = await globalRegistry.run('<%= skillSlug %>', { message: 'hello' });
+console.log(result);
+```
+
+You can also import skills directly:
+
+```ts
+import { <%= skillCamel %>Skill } from '<%= packageName %>';
+
+const output = await <%= skillCamel %>Skill.execute({ message: 'hello' });
+```
+<% if (includeCli) { %>
+## CLI
+
+```sh
+# List all registered skills
+npx <%= packageSlug %> list
+
+# Run a skill with JSON input
+npx <%= packageSlug %> run <%= skillSlug %> '{"message":"hello"}'
+```
+<% } %>
+## Adding a new skill
+
+1. Create `src/my-skill.ts` implementing the `Skill` interface.
+2. Register it in `src/index.ts` via `globalRegistry.register(mySkill)`.
+3. Export it as a named export for direct use.
+
+```ts
+import type { Skill } from '@14e-inc/comfy-skills';
+
+export const mySkill: Skill<{ input: string }, { output: string }> = {
+  name: 'my-skill',
+  description: 'Does something useful',
+  async execute(input) {
+    return { output: input.input.toUpperCase() };
+  },
+};
+```
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `pnpm build` | Bundle to `dist/` |
+| `pnpm test` | Run tests with Vitest |
+| `pnpm test:watch` | Watch mode |
+
+## License
+
+<%= license %>

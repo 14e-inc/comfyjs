@@ -1,0 +1,35 @@
+{
+  "name": "@14e-inc/generator-comfy-skill",
+  "version": "0.1.0",
+  "description": "Yeoman generator that scaffolds a publishable @14e-inc/comfy-skills module",
+  "author": "14e Inc.",
+  "license": "MIT",
+  "type": "module",
+  "files": ["dist", "generators", "templates"],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm run clean"
+  },
+  "dependencies": {
+    "yeoman-generator": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": ["yeoman-generator", "comfy-skills", "scaffold"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hebronwatson/comfyjs.git",
+    "directory": "packages/generator-comfy-skill"
+  },
+  "bugs": {
+    "url": "https://github.com/hebronwatson/comfyjs/issues"
+  },
+  "homepage": "https://github.com/hebronwatson/comfyjs/tree/main/packages/generator-comfy-skill#readme"
+}

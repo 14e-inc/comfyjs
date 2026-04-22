@@ -1,0 +1,8 @@
+import { globalRegistry } from '@14e-inc/comfy-skills';
+import { <%= skillCamel %>Skill } from './<%= skillSlug %>';
+
+// Registers all skills into the shared registry on import (side-effect).
+globalRegistry.register(<%= skillCamel %>Skill);
+
+export { <%= skillCamel %>Skill } from './<%= skillSlug %>';
+export type { Skill, SkillInput, SkillOutput } from '@14e-inc/comfy-skills';

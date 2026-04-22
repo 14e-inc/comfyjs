@@ -1,0 +1,15 @@
+import type { Skill } from '@14e-inc/comfy-skills';
+
+type <%= skillPascal %>Input = { message: string };
+type <%= skillPascal %>Output = { result: string; timestamp: string };
+
+export const <%= skillCamel %>Skill: Skill<<%= skillPascal %>Input, <%= skillPascal %>Output> = {
+  name: '<%= skillSlug %>',
+  description: '<%= skillDescription %>',
+  async execute(input) {
+    return {
+      result: input.message,
+      timestamp: new Date().toISOString(),
+    };
+  },
+};

@@ -1,0 +1,55 @@
+{
+  "name": "@14e-inc/comfy-skills",
+  "version": "0.1.0",
+  "description": "Composable skills module — define, register, and run typed async skills via code or CLI",
+  "author": "14e Inc.",
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "comfy-skills": "./dist/cli.cjs.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
+    "clean": "rm -rf dist",
+    "prebuild": "pnpm run clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^12.0.0",
+    "@types/node": "^22.0.0",
+    "rollup": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hebronwatson/comfyjs.git",
+    "directory": "packages/comfy-skills"
+  },
+  "bugs": {
+    "url": "https://github.com/hebronwatson/comfyjs/issues"
+  },
+  "homepage": "https://github.com/hebronwatson/comfyjs/tree/main/packages/comfy-skills#readme",
+  "keywords": ["skills", "registry", "cli", "composable", "cloudflare-workers"]
+}

@@ -1,0 +1,29 @@
+import { globalRegistry } from '@14e-inc/comfy-skills';
+import './index'; // registers all skills as a side-effect
+
+const [, , command, skillName, jsonArg] = process.argv;
+
+async function main(): Promise<void> {
+  switch (command) {
+    case 'list':
+      console.table(globalRegistry.list());
+      break;
+    case 'run': {
+      if (!skillName) {
+        console.error('Usage: <%= packageSlug %> run <skill-name> [json-input]');
+        process.exit(1);
+      }
+      const input = jsonArg ? (JSON.parse(jsonArg) as Record<string, unknown>) : {};
+      const result = await globalRegistry.run(skillName, input);
+      console.log(JSON.stringify(result, null, 2));
+      break;
+    }
+    default:
+      console.log('Usage: <%= packageSlug %> <list|run> [args]');
+  }
+}
+
+main().catch((err: Error) => {
+  console.error(err.message);
+  process.exit(1);
+});
