@@ -1,1 +1,0 @@
-. ./devauthor/pushme.sh
