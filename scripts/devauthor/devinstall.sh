@@ -1,3 +1,7 @@
+#!/usr/bin/sh
+
+# This function will be called to update the system.
+# It looks repetitive, but it will be used to run from the repo_root, preventing the need to cd into the script directories.
 dev_install(){
     # require devinstall.sh to be present in the current directory
     if [ ! -f devinstall.sh ]; then
