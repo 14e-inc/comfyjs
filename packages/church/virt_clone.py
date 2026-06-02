@@ -116,7 +116,7 @@ def main():
         images_dir = "/var/lib/libvirt/images"
         dst_qcow2_path = os.path.join(images_dir, f"{dst_vm}.qcow2")
         src_qcow2_path = os.path.join(images_dir, f"{src_vm}.qcow2")
-        dst_xml_file = f"{dst_vm}.xml"
+        dst_xml_file = os.path.join(images_dir, f"{dst_vm}.xml")
 
         # ---------------------------------------------------------
         # Step 1: Generate XML Definition via virt-clone
