@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
-. ./scripts/devauthor/pushme.sh
-. ./scripts/devauthor/vm_ip_addr.sh
-. ./scripts/devauthor/devinstall.sh
+DEV_AUTHOR_SCRIPT_HOME="./scripts/devauthor"
+
+for i in $(ls $DEV_AUTHOR_SCRIPT_HOME/*.sh); do
+    echo "would have run . " $DEV_AUTHOR_SCRIPT_HOME/$i
+done
