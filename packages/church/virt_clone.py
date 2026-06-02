@@ -44,9 +44,9 @@ def run_command(cmd, logger, dry_run=False, stdout_file=None):
     print(f"#[COMMAND_STR] {cmd_str}")
     
     if dry_run:
-        logger.info("#[DRY-RUN] Would execute: {cmd_str}")
+        logger.info(f"#[DRY-RUN] Would execute: {cmd_str}")
         if stdout_file:
-            logger.info("#[DRY-RUN] Would redirect output to: {stdout_file}")
+            logger.info(f"#[DRY-RUN] Would redirect output to: {stdout_file}")
         return True
 
     logger.info(f"Executing command: {cmd_str}")
