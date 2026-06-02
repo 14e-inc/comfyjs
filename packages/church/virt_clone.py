@@ -138,7 +138,7 @@ def main():
         # Note: 'cp --progress' output can flood logs. We invoke standard 'cp' via subprocess.
         # Alternatively, for a non-dry-run, python's native shutil could be used, 
         # but sticking to 'cp' preserves consistency with your exact tool chain.
-        copy_cmd = ["cp", "--progress", src_qcow2_path, dst_qcow2_path]
+        copy_cmd = ["cp", src_qcow2_path, dst_qcow2_path]
         run_command(copy_cmd, logger, dry_run=dry_run)
 
         # ---------------------------------------------------------
