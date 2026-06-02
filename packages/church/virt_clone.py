@@ -38,10 +38,7 @@ def setup_logging():
 # ---------------------------------------------------------
 def run_command(cmd, logger, dry_run=False, stdout_file=None):
     """Executes a system command with robust logging and error handling."""
-    print("#[COMMAND_ARGS] ")
-    print(json.dumps(cmd, indent=2))
     cmd_str = " ".join(cmd)
-    print(f"#[COMMAND_STR] {cmd_str}")
     
     if dry_run:
         logger.info(f"#[DRY-RUN] Would execute: {cmd_str}")
