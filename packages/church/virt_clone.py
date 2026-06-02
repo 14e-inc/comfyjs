@@ -128,6 +128,8 @@ def main():
             "--file", dst_qcow2_path,
             "--print-xml"
         ]
+        print("#[COMMAND] virt-clone command to generate XML:")
+        print(json.dumps(clone_cmd))
         run_command(clone_cmd, logger, dry_run=dry_run, stdout_file=dst_xml_file)
 
         # ---------------------------------------------------------
