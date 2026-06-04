@@ -1,0 +1,21 @@
+# Source - https://stackoverflow.com/a/15113891
+# Posted by vaab, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-06-02, License - CC BY-SA 4.0
+
+vm_name: "zulia-warp-01"
+vm_image_path: "/var/lib/libvirt/images/"
+disk_size_gb: 40
+cloud_init_script_path: "/opt/church/cloud-init/"
+nodes:
+    - 1
+    - 2
+    - 3
+    - 4
+other-things: [a, b, c]
+maintainer: "XX Watson"
+tags: ["current", "zulia", "warp", "test"]
+version: 0.1.0
+process: ["provisioning", "test", "init", "vm_cloud_init"]
+description: |
+    We are aiming at cloud init for ubuntu, but may need to pivot at some point.
+    Arch Linux or some other type of cloud linux may be more suitable than ubuntu server 24.04 LTS. We will see how it goes./

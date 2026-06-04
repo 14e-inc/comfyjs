@@ -2,6 +2,7 @@
 #!/usr/bin/sh
 
 # These functions will be called on the provisioned VM's to set up the development environment.
+
 decl(){
     if [ -z "$1" ]; then
         echo "Usage: decl <function_name>"

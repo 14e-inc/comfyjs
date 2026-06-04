@@ -35,6 +35,9 @@ importers:
       jest:
         specifier: ^29.0.0
         version: 29.7.0(@types/node@22.19.17)
+      openclaude:
+        specifier: ^0.0.1
+        version: 0.0.1
       rollup:
         specifier: ^4.0.0
         version: 4.60.1
@@ -52,7 +55,7 @@ importers:
     dependencies:
       '@14e-inc/comfy-auth-util':
         specifier: workspace:*
-        version: link:../comfy-auth-util
+        version: link:../comfy-type-test
       jose:
         specifier: ^5.0.0
         version: 5.10.0
@@ -160,6 +163,33 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^2.0.0
         version: 2.1.9(vitest@2.1.9(@types/node@22.19.17)(terser@5.46.1))
+      rollup:
+        specifier: ^4.0.0
+        version: 4.60.1
+      tslib:
+        specifier: ^2.0.0
+        version: 2.8.1
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vitest:
+        specifier: ^2.0.0
+        version: 2.1.9(@types/node@22.19.17)(terser@5.46.1)
+
+  packages/comfy-type-test:
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: ^4.0.0
+        version: 4.20260421.1
+      '@rollup/plugin-commonjs':
+        specifier: ^28.0.0
+        version: 28.0.9(rollup@4.60.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^15.0.0
+        version: 15.3.1(rollup@4.60.1)
+      '@rollup/plugin-typescript':
+        specifier: ^12.0.0
+        version: 12.3.0(rollup@4.60.1)(tslib@2.8.1)(typescript@5.9.3)
       rollup:
         specifier: ^4.0.0
         version: 4.60.1
@@ -3430,6 +3460,9 @@ packages:
   onetime@7.0.0:
     resolution: {integrity: sha512-VXJjc87FScF88uafS3JllDgvAm+c/Slfz06lorj2uAY34rlUu0Nt+v8wreiImcrgAjjIHp1rXpTDlLOGw29WwQ==}
     engines: {node: '>=18'}
+
+  openclaude@0.0.1:
+    resolution: {integrity: sha512-0Pud4LEW088vfcbMoOHLfTX6jc2BgIIUybwPXduCp0LrBoUaIo6r6h4rwfnHFq2ZeEk2+ULnURtbWV9Y7wswVQ==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -7940,6 +7973,8 @@ snapshots:
   onetime@7.0.0:
     dependencies:
       mimic-function: 5.0.1
+
+  openclaude@0.0.1: {}
 
   optionator@0.9.4:
     dependencies:

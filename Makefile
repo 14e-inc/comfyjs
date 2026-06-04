@@ -71,6 +71,12 @@ gen-publish-dry: ## Dry-run publish the generator
 gen-pack-dry: ## Show generator tarball manifest (pack --dry-run)
 	$(MAKE) -C packages/generator-comfy-skill pack-dry
 
+
+# -- Packages ------------------------------------------------------------------
+
+test-yaml:
+	uvx -w pyyaml pytest packages/tests/config_yaml
+
 # ── Help ──────────────────────────────────────────────────────────────────────
 
 help: ## Show this help message
