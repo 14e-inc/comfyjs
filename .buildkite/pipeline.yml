@@ -1,7 +1,6 @@
 steps:
   - label: ":hammer: Build"
-    name: "example step"
-    command: "packages/comfy-auth-util/scripts/test.sh"
+    command: "packages/comfy-auth-util/pipeline.sh"
     key: build
   - name: ":hammer: Example Script"
     command: "./packages/comfy-auth-util/script.sh"
