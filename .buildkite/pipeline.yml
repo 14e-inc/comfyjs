@@ -2,14 +2,3 @@ steps:
   - label: ":hammer: Build"
     command: "packages/comfy-auth-util/pipeline.sh"
     key: build
-  - name: ":hammer: Example Script"
-    command: "./packages/comfy-auth-util/script.sh"
-    artifact_paths: "artifacts/*"
-    plugins:
-      docker-compose#v5.2.0:
-        run: bash
-        config: packages/comfy-auth-util/docker-compose.yml
-        # pull: 
-          # - packages.buildkite.com/hebron-watson/cf-test-devx/node-alpine:20-alpine-0.1.0
-    agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
