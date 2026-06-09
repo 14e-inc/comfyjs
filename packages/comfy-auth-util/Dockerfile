@@ -14,3 +14,5 @@ COPY    .                      ./
 
 RUN pnpm build
 
+ENTRYPOINT ["pnpm", "test"]
+
