@@ -10,4 +10,5 @@ pycache
 bin
 .*
 .*/*
+**/.*
 !.buildkite*/*

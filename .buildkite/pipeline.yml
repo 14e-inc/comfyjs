@@ -1,20 +1,10 @@
 steps:
-  - command: pnpm build
+  - name: ":hammer: Example Script"
+    command: "./packages/comfy-auth-util/script.sh"
+    artifact_paths: "artifacts/*"
     plugins:
-      - seek-oss/docker-ecr-cache#v3.0.0:
-          cache-on:
-            - package.json # avoid cache hits on stale lockfiles
-            - pnpm-lock.yaml
-      - docker#v5.10.0:
-          volumes:
-            - /workdir/node_modules
-  - command: echo "I will stick!"
+      docker-compose#v5.2.0:
+        run: bash
+        config: packages/comfy-auth-util/docker-compose.yml
     agents:
-      hostname: "$BUILDKITE_AGENT_META_DATA_HOSTNAME"
-  - command: |
-      ls -la
-      cd packages
-      ls -la
-      cd comfy-auth-util
-      npm ci
-      npm build
+      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
