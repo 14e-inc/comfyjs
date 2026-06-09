@@ -8,5 +8,6 @@ pycache
 *.log
 .test
 bin
-!.buildkite*/
 .*
+.*/*
+!.buildkite*/*
