@@ -1,4 +1,8 @@
 steps:
+  - label: ":hammer: Build"
+    name: "example step"
+    command: "packages/comfy-auth-util/scripts/test.sh"
+    key: build
   - name: ":hammer: Example Script"
     command: "./packages/comfy-auth-util/script.sh"
     artifact_paths: "artifacts/*"
