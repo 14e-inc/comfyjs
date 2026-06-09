@@ -3,6 +3,7 @@ steps:
     agents:
       hostname: "$BUILDKITE_AGENT_META_DATA_HOSTNAME"
   - command: |
+      ls -la
       cd packages/comfyjs-auth-util
       npm ci
       npm build
