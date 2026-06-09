@@ -2,3 +2,10 @@ steps:
   - label: ":hammer: Build"
     command: "packages/comfy-auth-util/pipeline.sh"
     key: build
+  - label: ":pencil: Test"
+    command: bktec run
+    plugins:
+      - tests#v1.0.0:
+          test-runner: jest
+          result-path: jest-results.json
+    parallelism: 4
