@@ -4,6 +4,8 @@ steps:
       hostname: "$BUILDKITE_AGENT_META_DATA_HOSTNAME"
   - command: |
       ls -la
-      cd packages/comfyjs-auth-util
+      cd packages
+      ls -la
+      cd comfy-auth-util
       npm ci
       npm build
