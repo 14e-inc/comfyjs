@@ -1,0 +1,5 @@
+steps:
+  - command: echo "I will stick!"
+    agents:
+      hostname: "$BUILDKITE_AGENT_META_DATA_HOSTNAME"
+  - command: echo "I might not"
