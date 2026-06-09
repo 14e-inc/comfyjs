@@ -1,4 +1,5 @@
 
-npm i -g pnpm
+cd ../
 
-pnpm -C ../ test
+npm install
+npm test
