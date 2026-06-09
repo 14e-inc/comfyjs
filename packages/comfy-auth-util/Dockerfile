@@ -7,4 +7,5 @@ RUN pnpm install
 
 COPY /src /docker-build/
 RUN pnpm build
+RUN pnpm test
 

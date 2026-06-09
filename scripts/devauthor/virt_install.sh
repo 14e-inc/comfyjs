@@ -9,6 +9,7 @@ CONFIG_SERVER_DOMAIN="http://_gateway"
 CONFIG_SERVER_PORT="3003"
 ARCH="amd64"
 MEMORY="2048"
+IMAGE_PATH="
 
 kvm_install(){
     kvm -no-reboot -m "${MEMORY}" \
