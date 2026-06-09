@@ -1,0 +1,29 @@
+#!/bin/sh
+PACKAGES='./packages'
+COMFY_AUTH_UTIL_PACKAGE='./packages/comfy-auth-util'
+cau=$COMFY_AUTH_UTIL_PACKAGE
+pkg=$PACKAGES
+alias pmcd="pnpm -C "
+alias dkr=docker
+alias dc='docker compose'
+alias g=git
+alias cf='pnpm wrangler'
+alias ss='source ./alias.txt'
+alias d1='pnpm wrangler d1'
+alias d1-exec='d1 execute -f'
+alias d1x=d1-exec
+
+
+function cddc(){
+    if [[ -z $1 || -z $2 ]]; then
+        echo "usage: $0 <directory> <command>"
+        return 1
+    fi
+
+    docker compose -f $1/docker-compose.yml $2
+    return 0
+
+}
+
+
+

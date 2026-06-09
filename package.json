@@ -59,5 +59,8 @@
     "url": "https://github.com/hebronwatson/comfyjs/issues"
   },
   "homepage": "https://github.com/hebronwatson/comfyjs#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "@pnpm/lockfile.make-dedicated-lockfile": "^1100.0.16"
+  }
 }
