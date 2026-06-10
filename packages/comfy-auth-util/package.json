@@ -31,10 +31,11 @@
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-typescript": "^12.0.0",
+    "buildkite-test-collector": "^1.9.6",
     "rollup": "^4.0.0",
     "tslib": "^2.0.0",
     "typescript": "^5.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^2.1.9"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
