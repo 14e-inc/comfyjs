@@ -7,9 +7,7 @@
 
 install-pnpm:
 	echo "begin installing pnpm..." 						\
-	&& SHELL=bash curl -fsSL https://get.pnpm.io/install.sh | SHELL=bash sh - 	\
-    && SHELL=bash pnpm setup 								\
-    && source /root/.bashrc									\
+	&& wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -								\
 	&& echo "Done installing 'pnpm'..."
 
 
