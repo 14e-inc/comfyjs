@@ -12,9 +12,7 @@ export default defineConfig({
     // globals: true,
     // Send results to Test Engine
     reporters: [
-        'default',
-        'buildkite-test-collector/vitest/reporter',
-        { token: process.env.BUILDKITE_TOKEN },
+        'default'
     ],
     // Enable column + line capture for Test Engine
     includeTaskLocation: true,
