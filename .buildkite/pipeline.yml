@@ -1,4 +1,6 @@
 steps:
+  - label: ":stamp: Install"
+    command: make install-pnpm
   - label: ":hammer: Build"
     command: make build-auth-util
     key: build

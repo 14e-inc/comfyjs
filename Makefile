@@ -5,6 +5,10 @@
 # Default target
 .DEFAULT_GOAL := help
 
+install-pnpm:
+	curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+
 install: ## Install dependencies
 	pnpm install
 
