@@ -1,12 +1,14 @@
-.PHONY: install build clean test lint watch publish help \
-        build-all test-all publish-skills publish-gen publish-all \
+.PHONY: install build clean test lint watch publish help 			\
+        build-all test-all publish-skills publish-gen publish-all 	\
         gen-build gen-scaffold gen-publish-dry gen-pack-dry
 
 # Default target
 .DEFAULT_GOAL := help
 
 install-pnpm:
-	curl -fsSL https://get.pnpm.io/install.sh | sh -
+	curl -fsSL https://get.pnpm.io/install.sh | sh - 		\
+    && SHELL=bash pnpm setup 								\
+    && source /root/.bashrc
 
 
 install: ## Install dependencies
