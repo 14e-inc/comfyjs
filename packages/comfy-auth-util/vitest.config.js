@@ -4,6 +4,9 @@
 // Configure Vitest (https://vitest.dev/config/)
 
 import { defineConfig } from 'vite'
+import { dotenv } from 'dotenv'
+
+dotenv.load()
 
 export default defineConfig({
   test: {
@@ -12,7 +15,8 @@ export default defineConfig({
     // Send results to Test Engine
     reporters: [
         'default',
-        'buildkite-test-collector/vitest/reporter'
+        'buildkite-test-collector/vitest/reporter',
+        { token: process.env.BUILDKITE_TOKEN },
     ],
     // Enable column + line capture for Test Engine
     includeTaskLocation: true,
