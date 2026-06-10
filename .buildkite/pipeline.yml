@@ -6,6 +6,6 @@ steps:
     command: bktec run
     plugins:
       - tests#v1.0.0:
-          test-runner: vitest
+          test-runner: custom
           result-path: junit-*.xml
     parallelism: 4
