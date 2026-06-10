@@ -8,10 +8,12 @@
 install-pnpm:
 	curl -fsSL https://get.pnpm.io/install.sh | sh - 		\
     && SHELL=bash pnpm setup 								\
-    && source /root/.bashrc
+    && source /root/.bashrc									\
+	&& echo "Done installing 'pnpm'..."
 
 
 install: ## Install dependencies
+	echo "beginning pnpm install action..."
 	pnpm install
 
 build: ## Build all dist outputs (ESM, CJS, UMD)
