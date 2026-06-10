@@ -5,10 +5,10 @@
 # Default target
 .DEFAULT_GOAL := help
 
-install-pnpm:
-	echo "begin installing pnpm..." 						\
-	&& curl -fsSL https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -								\
-	&& echo "Done installing 'pnpm'..."
+install-yarn:
+	echo "begin installing yarn..." 						\
+	&& npm install -g yarn					\
+	&& echo "Done installing 'yarn'..."
 
 
 install: ## Install dependencies
@@ -51,7 +51,7 @@ version-major: ## Bump major version (x.0.0)
 build-all: ## Build every workspace package
 	pnpm -r run build
 
-build-auth-util:
+build-auth-util: install-yarn
 	yarn --cwd packages/comfy-auth-util install \
 	&& yarn --cwd packages/comfy-auth-util run build
 
