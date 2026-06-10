@@ -44,8 +44,14 @@ version-major: ## Bump major version (x.0.0)
 build-all: ## Build every workspace package
 	pnpm -r run build
 
+build-auth-util:
+	pnpm -C packages/comfy-auth-util build
+
 test-all: ## Test every workspace package
 	pnpm -r run test
+
+test-auth-util:
+	pnpm -C packages/comfy-auth-util test
 
 publish-skills: ## Publish @14e-inc/comfy-skills to GitHub Packages
 	$(MAKE) -C packages/comfy-skills publish

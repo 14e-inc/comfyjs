@@ -1,9 +1,9 @@
 steps:
   - label: ":hammer: Build"
-    command: "packages/comfy-auth-util/pipeline.sh"
+    command: make build-auth-util
     key: build
   - label: ":pencil: Test"
-    command: npm test
+    command: make test-auth-util
     plugins:
       - test-collector#v1.11.0:
           files: "test/junit-*.xml"
