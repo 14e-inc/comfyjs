@@ -21,10 +21,10 @@
     "build": "rollup -c",
     "build:watch": "rollup -c --watch",
     "clean": "rm -rf dist",
-    "prebuild": "pnpm run clean",
+    "prebuild": "yarn run clean",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.0.0",
